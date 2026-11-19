@@ -416,7 +416,7 @@ int VmMem::MemorySizeHintIoctl(int64_t size, const std::string& name)
 
     virtio_mem_fd = TEMP_FAILURE_RETRY(open(kVirtioMemPath, O_RDONLY | O_CLOEXEC));
     if (virtio_mem_fd < 0) {
-        LOG(PRI_ERROR, "Unable to open %s : %d",  kVirtioMemPath, strerror(errno));
+        LOG(PRI_ERROR, "Unable to open %s : %s",  kVirtioMemPath, strerror(errno));
         return virtio_mem_fd;
     }
 
